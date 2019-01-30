@@ -24,8 +24,8 @@ namespace Harman.Healthcare.DAL
 
                     using (var reader = sqlCommand.ExecuteReader())
                     {
-                        var patientIdIndex = reader.GetOrdinal("PatientId");
-                        var patientXmlIndex = reader.GetOrdinal("PatientData");
+                        var patientIdIndex = reader.GetOrdinal("PATIENTID");
+                        var patientXmlIndex = reader.GetOrdinal("PATIENTDATA");
 
                         if (reader is null)
                         {
@@ -65,7 +65,7 @@ namespace Harman.Healthcare.DAL
                 sqlCommand.CommandType = CommandType.StoredProcedure;
 
                 var sqlParameter = sqlCommand.CreateParameter();
-                sqlParameter.ParameterName = "@PatientXml";
+                sqlParameter.ParameterName = "@PATIENTXML";
                 sqlParameter.Value = patientInformationXML;
 
                 var resultRecordCount = sqlCommand.ExecuteNonQuery();

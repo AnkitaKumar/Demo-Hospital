@@ -26,8 +26,8 @@ namespace Harman.Healthcare.Common
     {
         #region SpNames
 
-        public static readonly string GetPatientInformation = "dbo.GetPatientInformation";
-        public static readonly string SavePatientInformation = "dbo.SavePatientInformation";
+        public static readonly string GetPatientInformation = "dbo.GetPatientsInformation";
+        public static readonly string SavePatientInformation = "dbo.SavePatienstInformation";
 
         #endregion
     }
