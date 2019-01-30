@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Patient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatientId>0</PatientId>
+  <Forename>Rajesh</Forename>
+  <Surname>Tiwary</Surname>
+  <DateOfBirth>2019-01-26T20:33:53.334378+05:30</DateOfBirth>
+  <Gender>Female</Gender>
+  <TelephoneNumbers>
+    <TelephoneNumber>
+      <Type>HomeNumber</Type>
+      <Number>999992432423</Number>
+    </TelephoneNumber>
+    <TelephoneNumber>
+      <Type>MobileNumber</Type>
+      <Number>1111132432423</Number>
+    </TelephoneNumber>
+    <TelephoneNumber>
+      <Type>WorkNumber</Type>
+      <Number>22222232432423</Number>
+    </TelephoneNumber>
+  </TelephoneNumbers>
+</Patient>

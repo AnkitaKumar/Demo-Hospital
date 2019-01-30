@@ -1,0 +1,146 @@
+﻿<div class="jumbotron text-center"><h2>Patient Information Portal</h2></div>
+<div id="dvTable"></div>
+<br />
+<div class="container"> 
+    <form id="formPatient">
+        <h4>Enter Patient Data</h4>
+        <div class="form-row" style="margin-top:1%">
+            <div class="col-md-3">
+                <label for="fornameText">Forename:</label>
+                <input type="text" class="form-control" id="fornameText" />
+            </div>
+            <div class="col-md-3">
+                <label for="surnameText">Surname:</label>
+                <input type="text" class="form-control" id="surnameText" />
+            </div>
+            <div class="col-md-3">
+                <label for="datetimepicker">DOB:</label>
+                <input type="text" id="datetimepicker" class="form-control" placeholder="mm-dd-yyyy"/>
+                @*<div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>*@
+            </div>
+            <div class="col-md-3">
+                <label for="">Gender:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="genderRadioOptions" id="maleRadioOption" value="1">
+                    <label class="form-check-label" for="maleRadioOption">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="genderRadioOptions" id="femaleRadioOption" value="2">
+                    <label class="form-check-label" for="femaleRadioOption">Female</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="col-md-3">
+                <label for="HomeNumberText">Home Number:</label>
+                <input type="text" id="HomeNumberText" class="form-control" />
+            </div>
+
+            <div class="col-md-3">
+                <label for="WorkNumberText">Work Number:</label>
+                <input type="text" id="WorkNumberText" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label for="MobileNumberText">Mobile Number:</label>
+                <input type="text" id="MobileNumberText" class="form-control" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-offset-10" style="margin-top:3%">
+                <button type="button" id="submitButton" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div id="messageText"></div>
+        </div>
+    </form>
+
+</div>
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#messageText').hide();
+            var patient = '';
+            $.ajax({
+                url: 'http://localhost:63210/uk-healthcare/api/v1/patients',
+                type: 'get',
+                success: function (data) {
+                    patient = data;
+                    var content = '<table class="table">  <thead> <tr> <th  scope="col"> Gender </th> <th  scope="col"> Forename' +
+                        '</th> <th  scope="col"> Surname </th> <th  scope="col"> DOB </th> <th  scope="col"> Home Number </th> <th  scope="col"> Work Number </th>  </tr></thead>';
+
+                    for (i = 0; i < patient.length; i++) {
+                        content += '<tbody><tr><td>' + patient[i].Gender + '</td>' +
+                            '<td> ' + patient[i].Forename + '</td >' +
+                            '<td>' + patient[i].Surname + '</td >' +
+                            '<td>' + formatDate(new Date(patient[i].DateOfBirth)) + '</td >' +
+                            '<td>' + patient[i].TelephoneNumbers[0].Number + '</td >' +
+                            '<td>' + patient[i].TelephoneNumbers[1].Number + '</td >' +
+                            '</tr > ';
+                    }
+                    content += "</tbody></table>";
+                    var dvTable = $("#dvTable");
+                    dvTable.html("");
+                    dvTable.append(content);
+                },
+                error: function () {
+                    $('#messageText').text('Error in displaying data.Please contact System Admin.')
+                    $('#messageText').show();
+                }
+            });
+
+            $('#submitButton').click(function (event) {
+                event.preventDefault();
+                $('#messageText').hide();
+                var patientSaveRequest = [];         
+                patientSaveRequest = {
+                    'Forename': $('#fornameText').val(),
+                    'Surname': $('#surnameText').val(),
+                    'DateOfBirth': $('#datetimepicker').val(),
+                    'Gender': $("input[name='genderRadioOptions']:checked").val(),
+                    'HomeNumber': $('#HomeNumberText').val(),
+                    'WorkNumber': $('#WorkNumberText').val(),
+                    'MobileNumber': $('#MobileNumberText').val()
+                };
+                          
+                $.ajax({
+                    url: 'http://localhost:63210/uk-healthcare/api/v1/patient',
+                    type: 'POST',
+                    data: patientSaveRequest,                  
+                    success: function () {
+                        $('#messageText').text('Data saved successfully.')
+                        $('#messageText').show();
+                    },
+                    error: function () {
+                        $('#messageText').text('Error in saving data.Please contact System Admin.')
+                        $('#messageText').show();
+                    }
+                })
+            });
+
+            function formatDate(date) {
+                var monthNames = [
+                    "January", "February", "March",
+                    "April", "May", "June", "July",
+                    "August", "September", "October",
+                    "November", "December"
+                ];
+
+                var day = date.getDate();
+                var monthIndex = date.getMonth();
+                var year = date.getFullYear();
+
+                return day + ' ' + monthNames[monthIndex] + ' ' + year;
+            }
+
+        });
+    </script>
+}
+ 

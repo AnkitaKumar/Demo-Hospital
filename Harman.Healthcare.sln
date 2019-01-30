@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harman.Healthcare.Host", "Host\Harman.Healthcare.Host\Harman.Healthcare.Host.csproj", "{97B73CC6-6474-4F8C-9B62-4DEBBB258096}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E6AFF040-44BD-458C-BFDB-F7D2B8F36A22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{3AA4ED37-07DA-482B-BA0D-1B0C38B297BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harman.Healthcare.Entity", "Domain\Entity\Harman.Healthcare.Entity\Harman.Healthcare.Entity.csproj", "{1443F4E7-8687-4A1C-9950-17C8AC55823C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harman.Healthcare.Contract", "Domain\Contract\Harman.Healthcare.Contract\Harman.Healthcare.Contract.csproj", "{6EBEF1DC-ECE2-4CFD-8DFA-3BD47F5AB978}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{964C2A1E-1241-4E16-B2A5-E5EDEEB67BB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harman.Healthcare.BL", "Core\BL\Harman.Healthcare.BL\Harman.Healthcare.BL.csproj", "{459A10AA-ABFC-495F-A556-1B4413309721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harman.Healthcare.DAL", "Core\DAL\Harman.Healthcare.DAL\Harman.Healthcare.DAL.csproj", "{F9293FF3-2810-4A2B-B3DA-94E7D3CAA866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harman.Healthcare.Common", "Common\Harman.Healthcare.Common\Harman.Healthcare.Common.csproj", "{E66B5A05-14B3-4CD1-88C4-C69E3CAC41DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harman.Healthcare.Logger", "Common\Harman.Healthcare.Logger\Harman.Healthcare.Logger.csproj", "{0AEF966A-A2B2-403F-9FB3-60B7420CC130}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{031DA3D6-4B87-4DF1-84D5-B6D3BC987DC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harman.Heathcare.UnitTest", "Tests\Harman.Heathcare.UnitTest\Harman.Heathcare.UnitTest.csproj", "{8906F140-6244-4512-A4F0-707F0AD33411}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97B73CC6-6474-4F8C-9B62-4DEBBB258096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B73CC6-6474-4F8C-9B62-4DEBBB258096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B73CC6-6474-4F8C-9B62-4DEBBB258096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B73CC6-6474-4F8C-9B62-4DEBBB258096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1443F4E7-8687-4A1C-9950-17C8AC55823C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1443F4E7-8687-4A1C-9950-17C8AC55823C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1443F4E7-8687-4A1C-9950-17C8AC55823C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1443F4E7-8687-4A1C-9950-17C8AC55823C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EBEF1DC-ECE2-4CFD-8DFA-3BD47F5AB978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EBEF1DC-ECE2-4CFD-8DFA-3BD47F5AB978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EBEF1DC-ECE2-4CFD-8DFA-3BD47F5AB978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EBEF1DC-ECE2-4CFD-8DFA-3BD47F5AB978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459A10AA-ABFC-495F-A556-1B4413309721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459A10AA-ABFC-495F-A556-1B4413309721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459A10AA-ABFC-495F-A556-1B4413309721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459A10AA-ABFC-495F-A556-1B4413309721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9293FF3-2810-4A2B-B3DA-94E7D3CAA866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9293FF3-2810-4A2B-B3DA-94E7D3CAA866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9293FF3-2810-4A2B-B3DA-94E7D3CAA866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9293FF3-2810-4A2B-B3DA-94E7D3CAA866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E66B5A05-14B3-4CD1-88C4-C69E3CAC41DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E66B5A05-14B3-4CD1-88C4-C69E3CAC41DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E66B5A05-14B3-4CD1-88C4-C69E3CAC41DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E66B5A05-14B3-4CD1-88C4-C69E3CAC41DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AEF966A-A2B2-403F-9FB3-60B7420CC130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEF966A-A2B2-403F-9FB3-60B7420CC130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEF966A-A2B2-403F-9FB3-60B7420CC130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEF966A-A2B2-403F-9FB3-60B7420CC130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8906F140-6244-4512-A4F0-707F0AD33411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8906F140-6244-4512-A4F0-707F0AD33411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8906F140-6244-4512-A4F0-707F0AD33411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8906F140-6244-4512-A4F0-707F0AD33411}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1443F4E7-8687-4A1C-9950-17C8AC55823C} = {3AA4ED37-07DA-482B-BA0D-1B0C38B297BA}
+		{6EBEF1DC-ECE2-4CFD-8DFA-3BD47F5AB978} = {3AA4ED37-07DA-482B-BA0D-1B0C38B297BA}
+		{459A10AA-ABFC-495F-A556-1B4413309721} = {964C2A1E-1241-4E16-B2A5-E5EDEEB67BB6}
+		{F9293FF3-2810-4A2B-B3DA-94E7D3CAA866} = {964C2A1E-1241-4E16-B2A5-E5EDEEB67BB6}
+		{E66B5A05-14B3-4CD1-88C4-C69E3CAC41DD} = {E6AFF040-44BD-458C-BFDB-F7D2B8F36A22}
+		{0AEF966A-A2B2-403F-9FB3-60B7420CC130} = {E6AFF040-44BD-458C-BFDB-F7D2B8F36A22}
+		{8906F140-6244-4512-A4F0-707F0AD33411} = {031DA3D6-4B87-4DF1-84D5-B6D3BC987DC1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D397A0B-EB95-421F-8CC6-61EE474D46AA}
+	EndGlobalSection
+EndGlobal
